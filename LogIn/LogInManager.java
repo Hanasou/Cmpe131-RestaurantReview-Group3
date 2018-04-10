@@ -12,7 +12,7 @@ public class LogInManager extends JFrame
 {  
   public static void createLogInPage()
   {
-  //hello
+  
      JFrame frame = new JFrame("First frame");
      frame.setPreferredSize(new Dimension(2000,2000));
      JButton logIn = new JButton("Log in");
@@ -67,23 +67,23 @@ public class LogInManager extends JFrame
          {
             String username = logInField.getText();
             String password = passwordField.getText();
-            if(database.validateLogIn(username,password))
+            if(database.validateLogIn(username,password)) //logins if the username and password matches
             {
             frame.setVisible(false);
             SearchManager manager = new SearchManager();
             manager.createPage(username);
              }
-            else if(database.wrongPassword(username,password))
+            else if(database.wrongPassword(username,password)) //checks if the password matches the username 
             {
                JOptionPane.showMessageDialog(frame,"You have entered " +
                     "incorrect password. Please try again.");
                logInField.setText("");
                passwordField.setText("");
             }
-            else if(database.noAccountExists(username))
+            else if(database.noAccountExists(username)) //checks if the user in the userbase
             {
                JOptionPane.showMessageDialog(frame, "You have entered " +
-                     "incorrect username. Please try again.");
+                     "incorrect username. Please try again."); 
                logInField.setText("");
                passwordField.setText("");
             }
