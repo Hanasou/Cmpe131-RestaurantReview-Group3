@@ -12,6 +12,7 @@ public class LogInManager extends JFrame
 {  
   public static void createLogInPage()
   {
+  //hello
      JFrame frame = new JFrame("First frame");
      frame.setPreferredSize(new Dimension(2000,2000));
      JButton logIn = new JButton("Log in");
